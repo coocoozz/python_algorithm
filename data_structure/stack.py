@@ -2,29 +2,32 @@ class Stack:
     def __init__(self):
         self.stack = list()
 
-    def push(self, num):
-        self.stack.append(num)
+    def push(self, value):
+        self.stack.append(value)
 
     def pop(self):
         if self.stack:
-            val = self.stack[-1]
+            value = self.stack[-1]
             del self.stack[-1]
-            return val
+            return value
         else:
-            return -1
+            return None
 
     def size(self):
         return len(self.stack)
 
     def empty(self):
         if self.stack:
-            return 0
+            return False
         else:
-            return 1
+            return True
 
     def top(self):
         if self.empty():
-            return -1
+            return None
         else:
             return self.stack[self.size() - 1]
+
+    def clear(self):
+        self.stack.clear()
 
